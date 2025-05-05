@@ -1,0 +1,73 @@
+
+--En Javascrip PODEMOS crear OBJETOS SIN necesidad de crear CLASES
+
+Ejemplo:
+
+var unCoche = {
+color : "rojo",
+precio : 1234.56
+}
+console.log( unCoche )
+console.log( unCoche.color )
+console.log( unCoche.precio )
+--------------------------------
+Ejemplo 2:
+
+var obj = {
+valor : 1234,
+metodo : function( a ) {
+return this.valor * a
+},
+incrementar : function() {
+this.valor++
+}
+} // obj
+obj.incrementar()
+var r = obj.metodo( 2 )
+console.log( r )
+
+-----------------------------
+JSON:sirve para guardar y recuperar información, así como transmitirla
+
+Ejemplo:
+var unaPersona = {
+dni : "20123567R",
+nombre : "Juan",
+apellidos : "García Pérez",
+edad : 19,
+telefonos : [696234567, 676456123]
+}
+
+EN JSON sería: 
+’{"dni":"20123567R","nombre":"Juan","apellidos":"García Pérez","edad":19,"telefonos":[696234567,676456123]}’
+
+PARA CONVERTIR UN OBJETO EN JSON: 
+    var texto = JSON.stringify( unaPersona )
+
+PARA CONVERTIR UN TEXTO EN FORMATO JSON A UN OBJETO DE JS:
+    var juan = JSON.parse( texto )
+
+--------------------------
+
+FICHEROS DE TEXTO: Guardan de forma persistente información
+
+Crear un fichero de texto:
+var fs = require( "fs" )
+fs.writeFile( "hola.txt", "hola mundo", function( err ) {
+if( err ) {
+console.log( "hubo un problema al escribir en hola.txt" )
+}
+})
+
+LEER UN FICHERO:
+var fs = require( "fs" )
+fs.readFile( "hola.txt", "utf8", function( err, contenido ) {
+if( err ) {
+console.log( "hubo un problema al leer de hola.txt" )
+return
+}
+console.log( contenido )
+})
+
+
+
