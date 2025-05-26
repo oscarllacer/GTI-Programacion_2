@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Práctica 6 Prueba</title>
+    <style>
+        html {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background-color: #cccccc;
+        }
+
+        .container {
+            display: inline-block;
+            width: 40%;
+            margin: 30px;
+            padding: 0;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+
+        h1 {
+            font-family: "Josefin Sans Thin", sans-serif;
+            font-size: 33px;
+            color: #666666;
+        }
+
+        hr {
+            border-top: 1px solid;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-family: "Josefin Sans Thin", sans-serif;
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            font-family: "Josefin Sans Thin", sans-serif;
+            font-size: 20px;
+            color: #666;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-family: "Josefin Sans Thin", sans-serif;
+            font-size: 18px;
+            color: #F2F2F2;
+            background-color: #131D26;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="">
+
+</div>
+<div class="container">
+    <h1>Insertar datos</h1>
+    <hr>
+    <p>Dni: <input type="text" name="dni" id="dni"></p>
+
+    <p>Nombre: <input type="text" name="nombre" id="nombre"></p>
+
+    <p>Apellidos: <input type="text" name="apellidos" size="40" id="apellidos"></p>
+
+    <button onclick="darDeAlta()" type="button" name="bPersona">Dar de alta</button>
+
+    <hr>
+
+    <p>Código: <input type="text" name="codigo" id="codigo"></p>
+
+    <p>Nombre de la asignatura: <input type="text" name="asignatura" id="asignatura"></p>
+
+    <button type="button" name="bAsignatura">Insertar asignatura</button>
+
+    <hr>
+
+    <p>Dni: <input type="text" name="dniMatricula" id="dniM"></p>
+
+    <p>Código: <input type="text" name="codigoMatricula" id="codigoM"></p>
+
+    <button type="button" name="bMatricula">Realizar matricula</button>
+
+    <hr>
+</div>
+<div class="container">
+    <h1>Realizar una consulta</h1>
+    <hr>
+    <p>Dni: <input type="text" name="dniB" id="dniB"></p>
+
+    <p>Nombre: <input type="text" name="nombreB" disabled></p>
+
+    <p>Apellidos: <input type="text" name="apellidosB" size="40" disabled></p>
+
+    <button type="button" name="buscarPersona">Buscar</button>
+
+    <hr>
+
+    <p>Codigo: <input type="text" name="codigoB" id="codigoB"></p>
+
+    <p>Nombre de la asignatura: <input type="text" name="asignaturaB" disabled></p>
+
+    <button type="button" name="buscarAsignatura">Buscar</button>
+</div>
+
+<script src="./proxy.js" charset="utf-8"></script>
+<script type="text/javascript">
+    function darDeAlta(){
+        var dni = document.getElementById("dni").value;
+        var nombre = document.getElementById("nombre").value;
+        var apellidos = document.getElementById("apellidos").value;
+
+        console.log(dni);
+
+        var datos = {
+            "dni": dni,
+            "nombre": nombre,
+            "apellidos": apellidos
+        }
+        console.log(datos);
+
+        insertarPersonaProxy(datos);
+    }
+</script>
+
+</body>
+
+</html>

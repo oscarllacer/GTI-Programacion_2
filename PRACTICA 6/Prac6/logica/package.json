@@ -1,0 +1,21 @@
+{
+    "name": "logica",
+    "version": "1.0.0",
+    "description": "2023",
+    "main": "mainTest1.js",
+    "author": "Vicente",
+    "repository": "no hay",
+    "license": "ISC",
+    "scripts": {
+        "test": "node ./node_modules/mocha/bin/mocha",
+        "ayuda": "echo ejecuta esto: npm test"
+    },
+    "dependencies": {
+        "sqlite3": "*"
+    },
+    "devDependencies": {
+        "mocha": "*"
+      }
+}
+  
+  
